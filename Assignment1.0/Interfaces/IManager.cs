@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment1._0.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,20 +13,25 @@ namespace Assignment1._0.Interfaces
         string Password { get; set; }
         string Email { get; set; }
         int NIC { get; set; }
-        int mobileNum { get; set; }
+        int MobileNum { get; set; }
+
+        string Department { get; set; }
 
 
+        List<Notifications> NotificationsList { get; set; }
 
+        List<Registration> ViewRegistrationList();
 
         void Login();
         void Logout();
 
         void DisplayUserInfo();
 
-        List<Registration> ViewRegistrationList();
-
         void ApproveRegistration(Registration reg);
         void DisaproveRegistration(Registration reg);
+
+        void SeeNotifications();
+
 
 
 

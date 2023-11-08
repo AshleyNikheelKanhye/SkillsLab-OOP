@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Assignment1._0.Enums;
+using Assignment1._0.Interfaces;
+using Assignment1._0.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Assignment1._0
 {
-    public class Registration
+    public class Registration : IRegistration
     {
-        private int RegID { get; set; }
+        public int RegID { get; set; }
         public string RegName { get; set; }
-        public  string RegStatus { get; set;}
+        public RegistrationStatus RegStatus { get; set;}
         public DateTime RegDate { get; set; }
-        public string Message {  get; set; }
+        
 
 
 
@@ -23,6 +26,13 @@ namespace Assignment1._0
         {
             RegisteredEmployee = employee;
             TrainingSession = training;
+            this.RegDate = DateTime.Now;
+            this.RegStatus = RegistrationStatus.Pending;
+            Notifications notifications = new Notifications();
+            notifications.NotificationAfterRegistration(employee, employee.getManager());
+
+
+
         }
 
         

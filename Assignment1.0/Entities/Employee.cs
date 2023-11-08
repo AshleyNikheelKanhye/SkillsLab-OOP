@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment1._0.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,18 @@ namespace Assignment1._0
         public int NIC { get; set; }
         public int mobileNum { get; set; }
         public string department { get; set; }
+        public List<Notifications> NotificationsList { get; set; }
+        public List<object> Qualifications { get ; set ; }
+        public Manager manager { get ; set ; }
 
         public void DisplayUserInfo()
         {
             
+        }
+
+        public Manager getManager()
+        {
+            return this.manager;
         }
 
         public void Login()
